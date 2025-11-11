@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Si quieres, puedes poner CSS normal aquí */
+body {
+  background-color: #020617; /* parecido a bg-slate-900 */
+  color: #e2e8f0;            /* color clarito para el texto */
+}
+
