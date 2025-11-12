@@ -1,0 +1,6 @@
+[
+  { "id": 1, "title": "Mona Lisa", "artist": "Leonardo da Vinci", "year": 1503 },
+  { "id": 2, "title": "Starry Night", "artist": "Vincent van Gogh", "year": 1889 },
+  { "id": 3, "title": "Guernica", "artist": "Pablo Picasso", "year": 1937 },
+  { "id": 4, "title": "The Weeping Woman", "artist": "Pablo Picasso", "year": 1937 }
+]

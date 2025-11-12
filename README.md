@@ -1,21 +1,75 @@
-# Prueba técnica – Catálogo de música (Vue 3 + Vite)
+Guía express para correr el proyecto
+1) ¿Tienes Node y npm?
+node -v
+npm -v
 
-Este proyecto es una pequeña aplicación web desarrollada con **Vue 3** y **Vite**.  
-Permite visualizar un listado de elementos (por ejemplo, canciones / álbumes) y filtrarlos por:
 
-- **Artista**
-- **Año**
-- **Título** (búsqueda por texto)
+Si ves versiones (ej. v20.x / 10.x), sigue al paso 2.
 
-La aplicación forma parte de una prueba técnica y está enfocada en el uso de componentes, props, estados y filtros en Vue 3.
+Si no los tienes, instálalos:
 
----
+Windows (elige 1)
+# Opción A: winget (recomendada)
+winget install OpenJS.NodeJS.LTS
 
-## Requisitos previos
+# Opción B: chocolatey (si ya lo tienes)
+choco install nodejs-lts -y
 
-Antes de ejecutar el proyecto necesitas tener instalado:
+macOS (Homebrew)
+brew install node
 
-- **Node.js** (recomendado: versión 18 o superior)  
-  Puedes verificar tu versión con:
-  ```bash
-  node -v
+Ubuntu/Debian (NodeSource LTS)
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+2) ¿Tienes Git?
+git --version
+
+
+Si no lo tienes:
+
+Windows:
+
+winget install Git.Git
+
+
+macOS:
+
+brew install git
+
+
+Ubuntu/Debian:
+
+sudo apt-get update && sudo apt-get install -y git
+
+3) Clonar el repositorio
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+
+4) Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con VITE_.
+
+Contenido que debe llevar:
+
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+
+Forma rápida por sistema
+
+Windows (PowerShell):
+
+Set-Content -Path .env -Value 'VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"'
+
+
+macOS / Linux:
+
+printf 'VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"\n' > .env
+
+5) Instalar dependencias
+npm install
+
+6) Ejecutar en modo desarrollo
+npm run dev
+
+
+Abre la URL que te muestre la terminal (normalmente http://localhost:5173).
