@@ -1,108 +1,9000 @@
-Guía express para correr el proyecto
-1) ¿Tienes Node y npm?
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
 node -v
 npm -v
+```
 
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
 
-Si ves versiones (ej. v20.x / 10.x), sigue al paso 2.
+Si no los tienes instalados, elige una opción:
 
-Si no los tienes, instálalos:
-
-Windows (elige 1)
-# Opción A: winget (recomendada)
+**Opción A: winget (recomendada)**
+```powershell
 winget install OpenJS.NodeJS.LTS
+```
 
-# Opción B: chocolatey (si ya lo tienes)
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
 choco install nodejs-lts -y
+```
 
-macOS (Homebrew)
-brew install node
+### 2. Verificar Git
 
-Ubuntu/Debian (NodeSource LTS)
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt-get install -y nodejs
+Ejecuta en PowerShell:
 
-2) ¿Tienes Git?
+```powershell
 git --version
+```
 
+Si no lo tienes instalado:
 
-Si no lo tienes:
-
-Windows:
-
+```powershell
 winget install Git.Git
+```
 
+## Instalación y configuración
 
-macOS:
+### 1. Clonar el repositorio
 
-brew install git
-
-
-Ubuntu/Debian:
-
-sudo apt-get update && sudo apt-get install -y git
-
-3) Clonar el repositorio
+```powershell
 git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
 cd <TU_REPO>
-
-4) Crear el archivo .env
-
-El proyecto usa Vite; las variables deben empezar con VITE_.
-
-Contenido que debe llevar:
-
-VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
-
-Forma rápida por sistema
-
-Windows (PowerShell):
-
-Set-Content -Path .env -Value 'VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"'
-
-
-macOS / Linux:
-
-printf 'VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"\n' > .env
-
-5) Instalar dependencias
-npm install
-
-6) Ejecutar en modo desarrollo
-npm run dev
-
-
-Abre la URL que te muestre la terminal (normalmente http://localhost:5173).
-
-## Resumen de cambios
-
-1. Selectores `data-cy` en `ArtworkCard.vue` para título, artista y año.
-2. Pruebas de Cypress actualizadas con los selectores correctos.
-3. Scripts en `package.json` para ejecutar Cypress.
-4. Configuración de Cypress aj
-
-## Ejecutar pruebas E2E con Cypress
-
-### Modo interactivo (recomendado para desarrollo)
-1. Asegúrate de que la aplicación esté corriendo:
-   ```bash
-   npm run dev
-   ```
-
-2. En otra terminal, abre Cypress:
-   ```bash
-   npm run test:cypress:open
-   ```
-
-3. Selecciona "E2E Testing" y el navegador que prefieras.
-
-4. Haz clic en el archivo `gallery_filters.cy.js` para ejecutar las pruebas.
-
-### Modo headless (para CI/CD)
-```bash
-# Asegúrate de que la app esté corriendo en otra terminal
-npm run dev
-
-# En otra terminal, ejecuta:
-npm run test:cypress
 ```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar Git
+
+Ejecuta en PowerShell:
+
+```powershell
+git --version
+```
+
+Si no lo tienes instalado:
+
+```powershell
+winget install Git.Git
+```
+
+## Instalación y configuración
+
+### 1. Clonar el repositorio
+
+```powershell
+git clone https://github.com/<TU_USUARIO>/<TU_REPO>.git
+cd <TU_REPO>
+```
+
+### 2. Crear el archivo .env
+
+El proyecto usa Vite; las variables deben empezar con `VITE_`.
+
+**Contenido del archivo `.env`:**
+
+```
+VITE_API_BASE_URL="https://api.artic.edu/api/v1/artworks"
+```
+
+**Crear el archivo en PowerShell
+
+```powershell
+# Galería de Arte – Art Institute of Chicago
+
+Aplicación web desarrollada en Vue 3 que consume la API pública del Art Institute of Chicago, mostrando una galería de obras de arte con filtros dinámicos, scroll infinito y pruebas E2E automatizadas con Cypress.
+
+## Requisitos previos
+
+### 1. Verificar Node.js y npm
+
+Abre PowerShell y ejecuta:
+
+```powershell
+node -v
+npm -v
+```
+
+Si ves versiones (ej. `v20.x` / `10.x`), continúa al siguiente paso.
+
+Si no los tienes instalados, elige una opción:
+
+**Opción A: winget (recomendada)**
+```powershell
+winget install OpenJS.NodeJS.LTS
+```
+
+**Opción B: chocolatey (si ya lo tienes)**
+```powershell
+choco install nodejs-lts -y
+```
+
+### 2. Verificar

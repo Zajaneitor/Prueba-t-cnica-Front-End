@@ -191,11 +191,11 @@ const filteredArtworks = computed(() => {
         }
       }
       
-      // Si tenemos un año válido, comparar
+      // Si tenemos un año válido se compara
       if (startYear !== null) {
         matchesYear = startYear >= parsedYear;
       } else {
-        // Si no hay fecha de inicio válida, excluir la obra del filtro
+        // Si no hay fecha de inicio válida se excluye
         matchesYear = false;
       }
     }
