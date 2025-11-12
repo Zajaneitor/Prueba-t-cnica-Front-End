@@ -16,6 +16,7 @@ export async function fetchArtworks(page = 1, limit = 20) {
       "title",
       "artist_title",
       "date_display",
+      "date_start",      
       "image_id",
       "gallery_title",
     ].join(",")

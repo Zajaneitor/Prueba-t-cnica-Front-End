@@ -30,7 +30,7 @@
       </p>
       <p class="text-xs text-slate-400 mt-1">
         <span class="font-medium">Galería:</span>
-        {{ artwork.gallery_title || 'Sin asignar' }}
+        {{ artwork.gallery_title || 'Scisa' }}
       </p>
     </div>
   </article>

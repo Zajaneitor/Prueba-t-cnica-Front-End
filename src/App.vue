@@ -16,24 +16,29 @@
 
     <!-- Filtros -->
     <section class="max-w-6xl mx-auto px-4 py-4">
-      <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-end">
-        <!-- Búsqueda por texto -->
-        <div class="flex-1">
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-3 items-end"
+      >
+        <!-- Filtro 1: Búsqueda por título -->
+        <div class="flex flex-col">
           <label class="block text-sm font-medium mb-1" for="search">
-            Buscar por título o artista
+            Buscar por título
           </label>
           <input
             id="search"
             data-cy="search-input"
             type="text"
             v-model="searchText"
-            placeholder="Ej. Monet, Water Lilies, etc."
+            placeholder="Ej. Water Lilies, Sunflowers..."
             class="w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
+          <p class="mt-1 text-xs text-slate-400 invisible">
+            &nbsp;
+          </p>
         </div>
 
-        <!-- Filtro por artista -->
-        <div class="w-full md:w-64">
+        <!-- Filtro 2: Artista -->
+        <div class="flex flex-col">
           <label class="block text-sm font-medium mb-1" for="artist">
             Filtrar por artista
           </label>
@@ -52,6 +57,28 @@
               {{ artist || 'Desconocido' }}
             </option>
           </select>
+          <p class="mt-1 text-xs text-slate-400 invisible">
+            &nbsp;
+          </p>
+        </div>
+
+        <!-- Filtro 3: Año mínimo -->
+        <div class="flex flex-col">
+          <label class="block text-sm font-medium mb-1" for="year">
+            Filtrar por año (desde)
+          </label>
+          <input
+            id="year"
+            data-cy="year-input"
+            type="number"
+            min="0"
+            v-model="yearFilter"
+            placeholder="Ej. 1800"
+            class="w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <p class="mt-1 text-xs text-slate-400">
+            Muestra obras con año de inicio mayor o igual al indicado.
+          </p>
         </div>
       </div>
     </section>
@@ -99,6 +126,7 @@ import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import ArtworkCard from "./components/ArtworkCard.vue";
 import { fetchArtworks } from "./services/artworksApi";
 
+// Estado base
 const artworks = ref([]);
 const page = ref(1);
 const hasMore = ref(true);
@@ -107,8 +135,9 @@ const error = ref(null);
 const iiifUrl = ref("https://www.artic.edu/iiif/2");
 
 // Filtros
-const searchText = ref("");
-const selectedArtist = ref("all");
+const searchText = ref("");       // título
+const selectedArtist = ref("all"); // artista
+const yearFilter = ref("");        // año (string)
 
 // Lista de artistas únicos para el select
 const artists = computed(() => {
@@ -124,19 +153,54 @@ const artists = computed(() => {
 // Aplicar filtros en memoria
 const filteredArtworks = computed(() => {
   const search = searchText.value.trim().toLowerCase();
+  
+  // Manejar yearFilter como string o número
+  const yearValue = yearFilter.value !== null && yearFilter.value !== undefined 
+    ? String(yearFilter.value).trim() 
+    : "";
+  const parsedYear = parseInt(yearValue, 10);
+  const hasYearFilter = yearValue !== "" && !Number.isNaN(parsedYear);
 
   return artworks.value.filter((a) => {
     const title = (a.title || "").toLowerCase();
     const artist = (a.artist_title || "").toLowerCase();
 
-    const matchesSearch =
-      !search || title.includes(search) || artist.includes(search);
+    // Filtro por título
+    const matchesSearch = !search || title.includes(search);
 
+    // Filtro por artista
     const matchesArtist =
       selectedArtist.value === "all" ||
       a.artist_title === selectedArtist.value;
 
-    return matchesSearch && matchesArtist;
+    // Filtro por año (usamos date_start como número)
+    let matchesYear = true;
+    if (hasYearFilter) {
+      const start = a.date_start;
+      
+      // Convertir date_start a número si es necesario
+      let startYear = null;
+      if (start !== null && start !== undefined) {
+        if (typeof start === "number") {
+          startYear = start;
+        } else if (typeof start === "string" && start.trim() !== "") {
+          const parsed = parseInt(start, 10);
+          if (!Number.isNaN(parsed)) {
+            startYear = parsed;
+          }
+        }
+      }
+      
+      // Si tenemos un año válido, comparar
+      if (startYear !== null) {
+        matchesYear = startYear >= parsedYear;
+      } else {
+        // Si no hay fecha de inicio válida, excluir la obra del filtro
+        matchesYear = false;
+      }
+    }
+
+    return matchesSearch && matchesArtist && matchesYear;
   });
 });
 
