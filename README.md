@@ -73,3 +73,36 @@ npm run dev
 
 
 Abre la URL que te muestre la terminal (normalmente http://localhost:5173).
+
+## Resumen de cambios
+
+1. Selectores `data-cy` en `ArtworkCard.vue` para título, artista y año.
+2. Pruebas de Cypress actualizadas con los selectores correctos.
+3. Scripts en `package.json` para ejecutar Cypress.
+4. Configuración de Cypress aj
+
+## Ejecutar pruebas E2E con Cypress
+
+### Modo interactivo (recomendado para desarrollo)
+1. Asegúrate de que la aplicación esté corriendo:
+   ```bash
+   npm run dev
+   ```
+
+2. En otra terminal, abre Cypress:
+   ```bash
+   npm run test:cypress:open
+   ```
+
+3. Selecciona "E2E Testing" y el navegador que prefieras.
+
+4. Haz clic en el archivo `gallery_filters.cy.js` para ejecutar las pruebas.
+
+### Modo headless (para CI/CD)
+```bash
+# Asegúrate de que la app esté corriendo en otra terminal
+npm run dev
+
+# En otra terminal, ejecuta:
+npm run test:cypress
+```

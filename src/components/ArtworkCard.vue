@@ -17,14 +17,14 @@
     </div>
 
     <div class="p-4 flex flex-col gap-1">
-      <h3 class="font-semibold text-lg line-clamp-2">
+      <h3 class="font-semibold text-lg line-clamp-2" data-cy="artwork-title">
         {{ artwork.title || 'Sin título' }}
       </h3>
-      <p class="text-sm text-slate-300">
+      <p class="text-sm text-slate-300" data-cy="artwork-artist">
         <span class="font-medium">Artista:</span>
         {{ artwork.artist_title || 'Desconocido' }}
       </p>
-      <p class="text-sm text-slate-300">
+      <p class="text-sm text-slate-300" data-cy="artwork-year">
         <span class="font-medium">Año:</span>
         {{ artwork.date_display || 'N/D' }}
       </p>
